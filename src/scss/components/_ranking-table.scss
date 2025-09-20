@@ -1,0 +1,363 @@
+.ranking-table {
+  display: flex;
+  min-width: var(--min-width-container, 320px);
+  max-width: var(--max-width-container, 1140px);
+  padding: var(--none, 0);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-grid, 16px);
+  align-self: stretch;
+  margin: 16px auto 0 auto;
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    margin: 16px 0 0 0;
+    overflow-x: hidden;
+  }
+
+  @media (max-width: 768px) {
+    margin: 16px 0 0 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gap-grid, 16px);
+    align-self: stretch;
+    width: 100%;
+
+    &[style*="display: none"] {
+      display: none !important;
+    }
+  }
+
+  &__card {
+    background: $white;
+    border-radius: 16px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.04),
+      0px 2px 20px -8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    &:hover {
+      box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.08),
+        0px 4px 24px -8px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+      transition: all 0.2s ease;
+    }
+  }
+
+  &__main {
+    display: flex;
+    padding: 0;
+    position: relative;
+  }
+
+  &__rank-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 36px;
+    padding: 32px 0 16px 0;
+    gap: 10px;
+  }
+
+  &__rank-badge {
+    background: #4a6cf7;
+    color: #f1f5f9;
+    padding: 4px 8px;
+    border-radius: 0 12px 12px 0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    width: 32px;
+    text-align: center;
+    letter-spacing: -0.12px;
+
+    &--secondary {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+  }
+
+  &__content-area {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    gap: 16px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
+    }
+  }
+
+  &__left-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-width: 200px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
+      min-width: auto;
+    }
+  }
+
+  &__team {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 200px;
+
+    img {
+      width: 48px;
+      height: 48px;
+      border-radius: 4px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    span {
+      font-family: Inter, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      color: #0f172a;
+      letter-spacing: -0.16px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex: 1;
+    }
+  }
+
+  &__performance {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    max-width: 354px;
+    min-width: 200px;
+
+    @media (max-width: 1024px) and (min-width: 769px) {
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+      max-width: none;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 8px;
+      max-width: none;
+      min-width: auto;
+    }
+  }
+
+  &__chart {
+    display: flex;
+    height: 4px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #94a3b8;
+    max-width: 328px;
+    min-width: 200px;
+
+    &-segment {
+      height: 100%;
+      flex: 1;
+
+      &--win {
+        background: #0ebca7;
+      }
+
+      &--draw {
+        background: #94a3b8;
+      }
+
+      &--loss {
+        background: #f45b69;
+      }
+    }
+  }
+
+  &__stats {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #334155;
+    letter-spacing: -0.14px;
+
+    @media (max-width: 768px) {
+      justify-content: flex-end;
+      align-self: flex-end;
+    }
+
+    &-item {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+  }
+
+  &__points {
+    background: #4a6cf7;
+    color: #f1f5f9;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-family: Inter, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: -0.18px;
+    min-width: 96px;
+    max-width: 144px;
+    box-shadow: 9px 0px 30px 0px rgba(3, 2, 19, 0.1);
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+
+    @media (max-width: 768px) {
+      align-self: flex-end;
+    }
+  }
+
+  &__details {
+    border-top: 1px solid #cbd5e1;
+    padding: 8px 16px;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+
+    .skeleton & {
+      border-top: none;
+    }
+
+    @media (max-width: 1024px) {
+      padding-right: 32px;
+      scroll-padding-right: 16px;
+
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  &__form-section {
+    flex: 1;
+    background: #ebefff;
+    border-radius: 8px;
+    padding: 4px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 340px;
+    min-width: 220px;
+
+    &-label {
+      font-family: Inter, sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      color: #334155;
+      letter-spacing: -0.12px;
+      min-width: 32px;
+      text-align: center;
+    }
+
+    &-badges {
+      display: flex;
+      gap: 4px;
+      padding: 4px 0;
+    }
+  }
+
+  &__form-badge {
+    width: 20px;
+    height: 20px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: -0.12px;
+
+    &--win {
+      background: #0ebca7;
+      color: #11423c;
+    }
+
+    &--draw {
+      background: #94a3b8;
+      color: #334155;
+    }
+
+    &--loss {
+      background: #f45b69;
+      color: #4e2529;
+    }
+  }
+
+  &__goals-section {
+    flex: 1;
+    display: flex;
+    gap: 8px;
+
+    &-item {
+      flex: 1;
+      background: #ebefff;
+      border-radius: 8px;
+      padding: 4px 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      min-width: 160px;
+
+      &-label {
+        font-family: Inter, sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        color: #334155;
+        letter-spacing: -0.12px;
+        text-align: center;
+      }
+
+      &-value {
+        font-family: Inter, sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24px;
+        color: #2951f7;
+        letter-spacing: -0.18px;
+        text-align: center;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+  }
+}

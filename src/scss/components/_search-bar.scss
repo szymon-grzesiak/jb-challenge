@@ -1,0 +1,114 @@
+.search-bar {
+  width: 100%;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    max-width: none;
+    min-width: 280px;
+    height: 40px;
+    padding: 0 $input-padding-horizontal;
+    align-items: center;
+    gap: 10px;
+    border-radius: $input-radius;
+    border: 1px solid $input-border-default;
+    background: $input-background;
+    transition: border-color $transition-base;
+    margin: 0;
+
+    &:focus-within {
+      border-color: $input-border-ring; // #4A6CF7
+    }
+
+    &--has-value {
+      .search-bar__icon--search {
+        display: none;
+      }
+      .search-bar__icon--close {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 1200px) and (min-width: 769px) {
+      margin: 0;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0 12px;
+      gap: 8px;
+    }
+  }
+
+  &__input {
+    flex: 1 0 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: $input-text-value; // #0F172A
+
+    font-family: Inter, sans-serif;
+    font-size: $font-size-base; // 16px
+    font-style: normal;
+    font-weight: 400;
+    line-height: $line-height-base * $font-size-base; // 24px
+    letter-spacing: -0.16px;
+
+    &::placeholder {
+      color: $input-text-placeholder; // #334155
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &--search {
+      display: flex;
+      pointer-events: none; 
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &--close {
+      display: none;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &--mobile {
+    display: none;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+
+    .search-bar__wrapper {
+      background: white;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      height: 40px;
+      padding: 0 16px;
+      width: 100%;
+      max-width: none;
+    }
+  }
+}

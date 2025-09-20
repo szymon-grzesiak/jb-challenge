@@ -1,18 +1,23 @@
 @charset "UTF-8";
 
-@import 'base/normalize';
+@import "base/normalize";
 
-@import 'utils/variables';
-@import 'utils/functions';
-@import 'utils/mixins';
+@import "utils/variables";
+@import "utils/functions";
+@import "utils/mixins";
 
-@import 'base/main';
-@import 'base/typography';
+@import "base/main";
+@import "base/typography";
 
-@import 'layouts/grid';
+@import "layouts/grid";
 
-@import 'components/icon';
-@import 'components/instructions';
-@import 'components/placeholder';
+@import "components/icon";
+@import "components/instructions";
+@import "components/placeholder";
+@import "components/ranking-app";
+@import "components/search-bar";
+@import "components/ranking-table";
+@import "components/skeleton";
+@import "components/form-badge";
 
-@import 'pages/task';
+@import "pages/task";

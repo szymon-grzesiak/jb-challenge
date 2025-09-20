@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"npm run sass\" \"npm run serve\"",
+    "dev:manual": "echo 'Run: node node_modules/sass/sass.js --watch src/scss/style.scss:src/style.css in one terminal, and node node_modules/lite-server/bin/lite-server in another'",
     "sass": "sass --watch src/scss/style.scss:src/style.css",
     "serve": "lite-server"
   },

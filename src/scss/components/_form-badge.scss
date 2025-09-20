@@ -1,0 +1,30 @@
+.form-badge {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: $white;
+  margin-right: 2px;
+
+  &--win {
+    background: #22c55e;
+  }
+
+  &--loss {
+    background: #dc2626;
+  }
+
+  &--draw {
+    background: #f59e0b;
+  }
+}
+
+.ranking-table__form {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}

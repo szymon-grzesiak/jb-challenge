@@ -1,16 +1,18 @@
 .placeholder {
   display: flex;
   flex-direction: column;
+  background-color: #ffffff;
+  width: 100%;
   align-items:  center;
   justify-content:  center;
-  border-radius: $border-radius;
-  border: $border-width dashed $border-color;
-  padding: $spacer * 5;
-  text-align: center;
+  gap: 16px;
+  border-radius: 16px;
+  padding: 24px;
+  border-radius: var(--card-radius, 16px);
+box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.04), 0 2px 20px -8px rgba(0, 0, 0, 0.10);
 
   @include element('icon') {
     color: rgba($gray-900, .4);
-    margin-bottom: $spacer * 2;
   }
 
   @include element('text') {
