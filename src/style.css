@@ -1,0 +1,25 @@
+/* Error: Undefined mixin.
+ *    ,
+ * 20 | /     @include breakpoint(md) {
+ * 21 | |       display: grid;
+ * 22 | |       grid-template-columns: 60px 1fr 80px 100px 120px;
+ * 23 | |       gap: $spacer;
+ * 24 | |       align-items: center;
+ * 25 | |       font-weight: $font-weight-semibold;
+ * 26 | |       font-size: 14px;
+ * 27 | |       color: $gray-900;
+ * 28 | \     }
+ *    '
+ *   src/scss/components/_ranking-table.scss 20:5  @import
+ *   src/scss/style.scss 18:9                      root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined mixin.\a    \2577 \a 20 \2502  \250c      @include breakpoint(md) {\a 21 \2502  \2502        display: grid;\a 22 \2502  \2502        grid-template-columns: 60px 1fr 80px 100px 120px;\a 23 \2502  \2502        gap: $spacer;\a 24 \2502  \2502        align-items: center;\a 25 \2502  \2502        font-weight: $font-weight-semibold;\a 26 \2502  \2502        font-size: 14px;\a 27 \2502  \2502        color: $gray-900;\a 28 \2502  \2514      }\a    \2575 \a   src/scss/components/_ranking-table.scss 20:5  @import\a   src/scss/style.scss 18:9                      root stylesheet";
+}
